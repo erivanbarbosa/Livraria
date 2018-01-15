@@ -2,9 +2,10 @@ package SwingView;
 
 public class Main {
 
-	//Método main inicia o programa criando um objeto da tela de pesquisa de livros
+	//Método main inicia o programa criando um objeto da ela principal
 	public static void main(String[] args) {
-		PesquisarLivrosTela pesquisaTela = new PesquisarLivrosTela();
-		pesquisaTela.exibir();
+		
+		PrincipalTela tela = new PrincipalTela();
+		tela.exibir();
 	}
 }

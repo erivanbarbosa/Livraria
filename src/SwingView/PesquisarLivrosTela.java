@@ -9,9 +9,6 @@ import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -20,20 +17,13 @@ import javax.swing.table.DefaultTableModel;
 import modelo.Livro;
 import servico.LivroServico;
 
-public class PesquisarLivrosTela {
+public class PesquisarLivrosTela extends JPanel {
 
-	JFrame frame = new JFrame("Pesquisar Livros");
 	JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT) );
 	JPanel panelButton = new JPanel();
 	
-	public void exibir() {
+	public PesquisarLivrosTela() {
 
-		// Cria a barra de menú
-		JMenuBar menuBar = new JMenuBar();
-		JMenu menu = new JMenu("Compras");
-		menuBar.add(menu);
-		frame.setJMenuBar(menuBar);
-		
 		// Cria o combobox de opções
 		String[] opcoes = { "Selecione", "Listar Todos" };
 		JComboBox<String> combo = new JComboBox<String>(opcoes);
@@ -77,13 +67,7 @@ public class PesquisarLivrosTela {
 
 			}
 		});
-
-		// Configura o Frame
-		frame.setLayout(new FlowLayout());
-		frame.add(panel);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(440, 350);
-		frame.setResizable(false);
-		frame.setVisible(true);
+		
+		this.add(panel);
 	}
 }
