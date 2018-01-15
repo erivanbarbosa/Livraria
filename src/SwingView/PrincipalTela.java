@@ -62,6 +62,7 @@ public class PrincipalTela {
 				
 			}
 		});
+		menuLivros.add( pesquisar );
 		
 		// Cria a barra de menú e adiciona os itens
 		JMenuBar menuBar = new JMenuBar();
