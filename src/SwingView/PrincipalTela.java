@@ -50,6 +50,21 @@ public class PrincipalTela {
 		
 		//Cria o menú livros
 		JMenu menuLivros = new JMenu("Livros");
+		JMenuItem home = new JMenuItem("Home");
+		home.addActionListener( new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				frame.getContentPane().removeAll();
+                frame.getContentPane().add(panelPrincipal);
+                frame.repaint();
+                frame.printAll(frame.getGraphics());
+				
+			}
+		});
+		menuLivros.add( home );
+		
+		
 		JMenuItem pesquisar = new JMenuItem("Pesquisar");
 		pesquisar.addActionListener( new ActionListener() {
 			
