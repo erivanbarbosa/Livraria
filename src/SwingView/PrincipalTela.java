@@ -17,8 +17,9 @@ import javax.swing.JPanel;
 
 public class PrincipalTela {
 
-	JFrame frame = new JFrame("Pesquisar Livros");
-	JPanel panelPrincipal;
+	private static JFrame frame = new JFrame("Pesquisar Livros");
+	private static JMenuBar menuBar = new JMenuBar();
+	private static JPanel panelPrincipal;
 	
 	public void exibir() {
 		
@@ -80,16 +81,33 @@ public class PrincipalTela {
 		menuLivros.add( pesquisar );
 		
 		// Cria a barra de menú e adiciona os itens
-		JMenuBar menuBar = new JMenuBar();
+		
 		menuBar.add(menuArquivo);
 		menuBar.add(menuLivros);
+		menuBar.setVisible(false);
 		
 		frame.setJMenuBar(menuBar);
 		frame.setLayout(new FlowLayout());
-		frame.add(panelPrincipal);
+		frame.add(new LoginTela());
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(440, 350);
 		frame.setResizable(false);
 		frame.setVisible(true);
+		
 	}
+
+	
+	public static void fecharFrame() {
+		frame.dispose();
+	}
+	
+	public static void login() {
+		menuBar.setVisible(true);
+		
+		frame.getContentPane().removeAll();
+        frame.getContentPane().add(panelPrincipal);//Adding to content pane, not to Frame
+        frame.repaint();
+        frame.printAll(frame.getGraphics());//Extort print all content
+	}
+	
 }
